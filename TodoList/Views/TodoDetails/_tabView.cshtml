@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TodoList.Models.TodoDetail>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Isdone)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (!item.Isdone)
+                {
+                @Html.DisplayFor(modelItem => item.Description)
+                }
+                else
+                {
+                <span style="background-color: #FFFF00">@Html.DisplayFor(modelItem => item.Description)</span>
+                }
+            </td>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.Isdone, new { id = item.ID, @class = "ActiveCheck" })
+                @*//so whenever this item will be made, an id will be assigned to that item because id is primary key
+                    //classname is given to identify the element*@
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<script src="~/Scripts_Customized/checkboxJS.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+<!--this js is added to the pv because we want this event listeners to be added anytime this table is created-->
+<!--if this is place in index.cshtml then it will only run the first time the page loads-->
