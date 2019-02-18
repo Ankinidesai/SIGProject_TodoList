@@ -1,7 +1,5 @@
 # SIGProject_TodoList
-========================================================================
        ASP.NET Web APPLICATION: SIG Project Overview
-========================================================================
 
 Pre-requirements:
 •	Visual Studio 2017
