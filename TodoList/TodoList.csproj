@@ -282,6 +282,7 @@
     <Content Include="Views\TodoDetails\Edit.cshtml" />
     <Content Include="Views\TodoDetails\Index.cshtml" />
     <Content Include="Views\TodoDetails\_tabView.cshtml" />
+    <Content Include="Views\TodoDetails\allTodos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -29,6 +29,7 @@ namespace TodoList.Controllers
              string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);//looking into db
             IEnumerable<TodoDetail> mytodo = db.todoDetails.ToList().Where(x => x.User == currentUser);
+            
             //for complete percentage
             int count = 0;
             foreach(TodoDetail todoDetail in mytodo)
@@ -114,9 +115,10 @@ namespace TodoList.Controllers
                 db.todoDetails.Add(todoDetail);
                 db.SaveChanges();
                 //return RedirectToAction("Index"); //no need to redirect but we will return the partial view
+                //ModelState.Clear();
                 return PartialView("_tabView", getMytodos());
             }
-
+            
             return View(todoDetail);
         }
 

@@ -17,7 +17,7 @@ namespace TodoList.Models
             return userIdentity;
         }
     }
-
+    //database of users
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()

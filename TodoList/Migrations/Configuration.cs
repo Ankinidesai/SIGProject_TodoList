@@ -29,11 +29,6 @@ namespace TodoList.Migrations
             var user = new ApplicationUser { UserName = "u1@gmail.com" };
             var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             um.Create(user, "password");
-
-            var user2= new ApplicationUser { UserName = "u2@gmail.com" };
-            var um2 = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            um2.Create(user2, "password2");
-
         }
                
     }
