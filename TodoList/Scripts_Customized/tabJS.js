@@ -6,8 +6,6 @@
         }
     });
 });
-$('#Description').val('');
-return false;
 
-//this js helps to load the document and ajax will sends a req to url and that url returns the partial view that 
+//this js helps to load the document and ajax will sends areq to url and that url returns the partial view that 
 //builds the table

@@ -26,16 +26,15 @@ namespace TodoList.Controllers
 
         private IEnumerable<TodoDetail> getMytodos()
         {
-             string currentUserId = User.Identity.GetUserId();
+            string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);//looking into db
             IEnumerable<TodoDetail> mytodo = db.todoDetails.ToList().Where(x => x.User == currentUser);
-            
             //for complete percentage
-            int count = 0;
-            foreach(TodoDetail todoDetail in mytodo)
-            {
-                count++;
-            }
+            //int count = 0;
+            //foreach(TodoDetail todoDetail in mytodo)
+            //{
+            //    count++;
+            //}
 
             return mytodo;
         }
@@ -55,6 +54,7 @@ namespace TodoList.Controllers
         public ActionResult allTodos()
         {
             return View(db.todoDetails.ToList());
+
         }
 
         // GET: TodoDetails/Details/5
@@ -89,7 +89,7 @@ namespace TodoList.Controllers
             if (ModelState.IsValid)
             {
                 string currentUserId = User.Identity.GetUserId();
-                ApplicationUser currentUser = db.Users.FirstOrDefault(x=>x.Id==currentUserId);
+                ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
                 todoDetail.User = currentUser;
 
 
@@ -115,11 +115,10 @@ namespace TodoList.Controllers
                 db.todoDetails.Add(todoDetail);
                 db.SaveChanges();
                 //return RedirectToAction("Index"); //no need to redirect but we will return the partial view
-                //ModelState.Clear();
-                return PartialView("_tabView", getMytodos());
+
             }
-            
-            return View(todoDetail);
+
+            return PartialView("_tabView", getMytodos());
         }
 
         // GET: TodoDetails/Edit/5
@@ -137,8 +136,8 @@ namespace TodoList.Controllers
 
             string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);//looking into db
-            
-            if(todoDetail.User!=currentUser)
+
+            if (todoDetail.User != currentUser)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
