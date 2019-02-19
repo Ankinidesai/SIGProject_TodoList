@@ -7,11 +7,13 @@ Pre-requirements:
 •	SQL Server
 •	Install Package using Nugget Manger 
 •      PM>Install-Package Microsoft.jQuery.Unobtrusive.Ajax -Version 3.2.6 
-       Key components:
+
+
+Key components:
 Configuration Files:
 
- web.config file: contains all the necessary configuration information of this web application
- global.asax: contains all the URL routing rules
+web.config file: contains all the necessary configuration information of this web application
+global.asax: contains all the URL routing rules
 
 Models:
 
