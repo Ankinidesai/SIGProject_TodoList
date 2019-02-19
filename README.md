@@ -10,10 +10,10 @@ Pre-requirements:
 
 
 Key components:
-Configuration Files:
+ Configuration Files:
 
-web.config file: contains all the necessary configuration information of this web application
-global.asax: contains all the URL routing rules
+ web.config file: contains all the necessary configuration information of this web application
+ global.asax: contains all the URL routing rules
 
 Models:
 
